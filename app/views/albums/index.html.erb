@@ -1,0 +1,12 @@
+ <h1>All Albums</h1>
+  <ul id="albums">
+<% @albums.each do |album| %>
+  <li>
+<%=  album.title %>
+ <%= album.artist %>
+ <%= album.description %>
+ <%= album.license_type %>
+ <%= album.release_date %>
+</li>
+ <% end %>
+</ul>

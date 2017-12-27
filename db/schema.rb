@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171226205612) do
+ActiveRecord::Schema.define(version: 20171227154453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,12 @@ ActiveRecord::Schema.define(version: 20171226205612) do
     t.string "license_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
+    t.string "title"
+    t.string "artist"
+    t.text "description"
+    t.string "release_date"
+    t.text "link"
+    t.string "tags", array: true
   end
 
 end

@@ -1,12 +1,28 @@
- <h1>All Albums</h1>
+ <h1>Find Music to Steal</h1>
+
+<%= search_form_for @q do |f| %>
+  <div class="field">
+    <%= f.label :tags_cont, "Enter genre" %>
+    <%= f.text_field :tags_cont %>
+  </div>
+  <%= f.submit "Search" %>
+  <% end %>
+
+  <%= search_form_for @q do |f| %>
+    <div class="field">
+      <%= f.label :license_type_cont, "Enter license type" %>
+      <%= f.text_field :license_type_cont %>
+    </div>
+    <%= f.submit "Search" %>
+<% end %>
+
   <ul id="albums">
 <% @albums.each do |album| %>
   <li>
 <%=  album.title %>
  <%= album.artist %>
- <%= album.description %>
- <%= album.license_type %>
- <%= album.release_date %>
+ <%= album.tags %>
+
 </li>
  <% end %>
 </ul>

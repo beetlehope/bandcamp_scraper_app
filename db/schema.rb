@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20171227154453) do
     t.text "description"
     t.string "release_date"
     t.text "link"
-    t.string "tags", array: true
+    t.string "tags"
   end
 
 end

@@ -2,7 +2,6 @@ require 'mechanize'
 require 'nokogiri'
 require 'active_record'
 
-#connected to db
 ActiveRecord::Base.establish_connection(
     :adapter  => 'postgresql',
     :host     => 'localhost',
@@ -10,7 +9,7 @@ ActiveRecord::Base.establish_connection(
     :password => 'bandcamp',
     :database => 'bandcamp_app_development')
 
-#start of scraping
+# Start of scraping
 agent = Mechanize.new
 pages_count = 1
 while pages_count < 2433 do
@@ -24,20 +23,16 @@ albums_links.map do |link|
   license_link =  album_page.at_css("#license.info.license a")
   license_link_value =  album_page.at_css("#license.info.license a")[:href] if license_link
 
-#building an Album class for saving info into database
+# Building an Album class for saving info into database
 
 class Album < ActiveRecord::Base
-  attr_accessor :license_type
+  #attr_accessor :license_type
 end
 
-#!!!!when code  @album = Album.new was pasted here, an album was created and saved to the database on each loop run
 
 
-#parsing each opened page to see whether license link is present, if it is, i need to grab info about this album and store it
+# Parsing each opened page to see whether license link is present, if it is, the scrips grabs info about this album and stores it in the db
 if license_link
-
-
-
 
 
       case license_link_value
@@ -85,19 +80,20 @@ end
 
 end
 
-#!!!Bringt it back at some point
 
-#Implemented random time interval between parsing loops
-#def rand_int(from, to)
-#  rand_in_range(from, to).to_i
-#end
 
-#def rand_in_range(from, to)
-  #rand * (to - from) + from
-#end
-#    sleep(rand_int(10, 50))
+# Implementing random time interval between parsing loops
 
-  #go to the next page on artists index
+def rand_int(from, to)
+  rand_in_range(from, to).to_i
+end
+
+def rand_in_range(from, to)
+  rand * (to - from) + from
+end
+    sleep(rand_int(10, 50))
+
+  # Go to the next page on artists index
 
     pages_count = pages_count + 1
 

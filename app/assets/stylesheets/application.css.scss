@@ -20,4 +20,32 @@
 
  body {
    padding-top: 60px;
- }
+ };
+
+ul {
+  list-style-type: none;
+};
+
+li {
+  margin: 10px;
+}
+
+#title {
+  font-weight: bold;
+}
+
+#release_date {
+  font-style: italic;
+}
+
+.container {
+  border: 1px solid #dee3ea;
+}
+.search {
+  margin: auto;
+  width: 50%;
+}
+
+h1 {
+   text-align: center;
+}

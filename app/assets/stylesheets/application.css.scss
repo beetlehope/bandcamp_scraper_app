@@ -30,22 +30,27 @@ li {
   margin: 10px;
 }
 
-#title {
-  font-weight: bold;
-}
-
-#release_date {
-  font-style: italic;
-}
-
 .container {
   border: 1px solid #dee3ea;
 }
+
 .search {
   margin: auto;
-  width: 50%;
+  width: 25%;
 }
 
 h1 {
    text-align: center;
+}
+
+#tags {
+  font-style: italic;
+}
+
+#title, #artist {
+  display: inline;
+}
+
+.col-lg-2 img {
+  padding: 15px 0px 0px 0px;
 }

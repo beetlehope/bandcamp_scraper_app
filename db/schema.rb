@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171229121944) do
+ActiveRecord::Schema.define(version: 20180102110746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(version: 20171229121944) do
     t.text "description"
     t.string "release_date"
     t.text "link"
-    t.string "tags"
     t.string "image_src"
+    t.string "tags", array: true
+    t.index ["tags"], name: "index_albums_on_tags", using: :gin
   end
 
 end

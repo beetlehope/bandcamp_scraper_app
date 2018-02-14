@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'ransack' , github: 'activerecord-hackery/ransack'
 gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 
 

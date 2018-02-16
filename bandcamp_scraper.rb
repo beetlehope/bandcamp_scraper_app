@@ -15,7 +15,7 @@ class Album < ActiveRecord::Base
 end
 
 current_page = 1
-total_pages = 2472 # Total number comes from this catalogue https://bandcamp.com/artist_index?page=9&sort_asc=1
+total_pages = 2481 # Total number comes from this catalogue https://bandcamp.com/artist_index?page=9&sort_asc=1
 
 while current_page < total_pages do
 

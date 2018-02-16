@@ -2,13 +2,12 @@
 
 <div class="search">
   <%= form_tag(albums_path, :method => "get", id: "search-form")  %>
-</div>
-<div class="search">
   <%= text_field_tag :tags, params[:tags], placeholder: "Enter genres" %>
   <%= select_tag :license_type, options_for_select(["Modifications allowed", "Commercial use allowed",
   "Commercial use & mods allowed", "Non-commercial use only & no mods allowed"],
    params[:license_type]), prompt: "All creative commons" %>
   <%= submit_tag "Search", name: nil %>
+  <%= link_to "Clear results", root_path, class: "btn btn-link" %>
 </div>
 
 <ul id="albums">
